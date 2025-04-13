@@ -1,5 +1,19 @@
-<h1>TASK : {{ task.title }}</h1>
+{% extends 'base/main.html' %}
 
-<p>{{ task.description }}</p>
-<p>{{ task.complete }}</p>
-<p>{{ task.create }}</p>
+{% block content %}
+
+<div class="task-detail-container">
+    <h1>{{ task.title }}</h1>
+
+    <div class="task-detail-card">
+        <p><strong>Description:</strong> {{ task.description }}</p>
+        <p><strong>Completed:</strong> {{ task.complete }}</p>
+        <p><strong>Created at:</strong> {{ task.create }}</p>
+
+        <a href="{% url 'tasks' %}" class="btn">Go Back</a>
+        <a href="{% url 'task-update' task.id %}" class="btn">Edit Task</a>
+        <a href="{% url 'task-delete' task.id %}" class="btn delete">Delete Task</a>
+    </div>
+</div>
+
+{% endblock content %}

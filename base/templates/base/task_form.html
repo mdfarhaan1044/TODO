@@ -1,7 +1,16 @@
-<h3>Task Form</h3>
+{% extends 'base/main.html' %}
 
-<form action="" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" >
-</form>
+{% block content %}
+<div class="form-container">
+    <h2>Create / Edit Task</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" class="btn">
+    </form>
+</div>
+{% endblock content %}
+
+
+
+

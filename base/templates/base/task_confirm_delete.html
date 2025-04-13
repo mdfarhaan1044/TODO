@@ -1,7 +1,17 @@
-<a href="{% url 'tasks'  %}">Go Back</a>
+{% extends 'base/main.html' %}
 
-<form action="" method="POST">
-    {% csrf_token %}
-    Are you sure you want to delete "{{task}}"
-    <input type="submit" value ="Delete">
-</form>
+{% block content %}
+<div class="delete-container">
+   
+
+    <div class="delete-box">
+        <p>Are you sure you want to <span class="delete-text">delete</span> <strong>"{{ task }}"</strong>?</p>
+        
+        <form action="" method="POST">
+            {% csrf_token %}
+            <button class ="Cancel-btn"><a href="{% url 'tasks' %}">Cancel</a></button>
+            <input type="submit" value="Delete" class="delete-btn">
+        </form>
+    </div>
+</div>
+{% endblock content %}
