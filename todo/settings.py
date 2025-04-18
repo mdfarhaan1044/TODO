@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4&b!6t82g6yjoe+e4fq&jjhjhhh%61)9_l6-_m_rxw$_ok_+s1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app' ,'127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app' ,'127.0.0.1' 'now.sh']
 
 
 # Application definition
@@ -74,13 +74,25 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'hBxDgjDJwcHSzyhApFpidgaHPZSXiqoY',
+        'HOST': 'caboose.proxy.rlwy.net',    
+        'PORT': '29398',
+       
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -123,8 +135,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
-# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 # Default primary key field type
 
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
